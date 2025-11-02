@@ -21,7 +21,12 @@ echo "DISTRIB_SOURCEBRANCH='openwrt-24.10'" >>package/base-files/files/etc/openw
 # sed -i 's/192.168.1.1/192.168.31.4/g' package/base-files/files/bin/config_generate
 #
 # ------------------------------- Main source ends -------------------------------
+# Add luci-app-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall package/openwrt-passwall
 
+# Add luci-app-openclash
+svn co https://github.com/vernesong/OpenClash/tree/master/luci-app-openclash package/openwrt-openclash
+pushd package/openwrt-openclash/tools/po2lmo && make && sudo make install 2>/dev/null && popd
 # ------------------------------- Other started -------------------------------
 #
 # Add luci-app-amlogic
