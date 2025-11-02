@@ -23,7 +23,8 @@ echo "DISTRIB_SOURCEBRANCH='openwrt-24.10'" >>package/base-files/files/etc/openw
 # ------------------------------- Main source ends -------------------------------
 # Add luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall package/openwrt-passwall
-
+# Add luci-app-cloudfared
+svn co https://github.com/elnet45/luci-app-cloudflared package/openwrt-cloudflared
 # Add luci-app-openclash
 svn co https://github.com/vernesong/OpenClash/tree/master/luci-app-openclash package/openwrt-openclash
 pushd package/openwrt-openclash/tools/po2lmo && make && sudo make install 2>/dev/null && popd
